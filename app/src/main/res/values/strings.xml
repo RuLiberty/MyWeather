@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Приложение: Погода</string>
+    <string name="front_string">Погода на сегодня</string>
+</resources>
