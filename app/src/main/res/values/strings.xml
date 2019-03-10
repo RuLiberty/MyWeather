@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Приложение: Погода</string>
-    <string name="front_string">Погода</string>
+    <string name="front_string">Погода сегодня:</string>
     <string name="second_string">Хорошая погодка сегодня!</string>>
 </resources>
