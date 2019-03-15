@@ -7,15 +7,14 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textViewTemp;
+    private TextView textViewTemp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         textViewTemp = findViewById(R.id.temp);
-        textViewTemp.setText(Double.toString(setTemp()).substring(0,4) + " С");
+        textViewTemp.setText(Double.toString(WeatherData.getTemp()).substring(0,4) + " С");
     }
 
     @Override
@@ -54,12 +53,7 @@ public class MainActivity extends AppCompatActivity {
         makeToast("onDestroy");
     }
 
-    private static void makeToast(String msg) {
+    private void makeToast(String msg) {
         Log.d("Lifecycle", msg);
-    }
-
-    private static double setTemp() {
-        WeatherData weatherNow = new WeatherData();
-        return weatherNow.getTemp();
     }
 }
