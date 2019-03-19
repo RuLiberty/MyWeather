@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Приложение: Погода</string>
     <string name="front_string">Температура сегодня:</string>
+    <string name="enter_city">Введите название города</string>
+    <string name="is_show_type_weather">Выводить подробности</string>
+    <string name="open_second_activity">Показать погоду</string>
 </resources>
