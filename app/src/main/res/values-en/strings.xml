@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather.today</string>
+    <string name="front_stringн">Temperature now:</string>
+    <string name="enter_city">Enter the name of the city</string>
+    <string name="is_show_type_weather">Show details</string>
+    <string name="open_second_activity">Show weather</string>
+</resources>
