@@ -1,64 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".ResultActivity">
 
-    <LinearLayout
+
+    <TextView
+        style="@style/HeaderText.Bold"
+        android:id="@+id/name_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="50dp">
+        android:text="@string/app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="36sp"/>
-
-        <TextView
-            android:id="@+id/name_city"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="город"
-            android:layout_marginStart="70dp"
-            android:textSize="32sp"
-            android:layout_marginTop="100dp"/>
-
-        <TextView
-            android:id="@+id/temp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Темп"
-            android:layout_marginStart="90dp"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        style="@style/HeaderText"
+        android:id="@+id/name_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
+        android:text="город"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/type_weather_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp" />
-
-        <TextView
-            android:id="@+id/type_weather"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Тип погоды"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:textSize="18sp" />
-    </LinearLayout>
+    <TextView
+        style="@style/usuallyText"
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Темп"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_city" />
 
 
-</android.support.v7.widget.LinearLayoutCompat>
+    <ImageView
+        android:id="@+id/type_weather_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/name_app"
+        app:layout_constraintTop_toBottomOf="@id/temp" />
+
+    <TextView
+        style="@style/usuallyText"
+        android:id="@+id/type_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Тип погоды"
+        app:layout_constraintLeft_toRightOf="@id/temp"
+        app:layout_constraintTop_toBottomOf="@id/guideline2" />
+
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="type_weather_img,type_weather" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="646dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="365dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="569dp" />
+
+
+</android.support.constraint.ConstraintLayout>

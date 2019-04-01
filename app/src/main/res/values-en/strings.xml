@@ -5,4 +5,5 @@
     <string name="enter_city">Enter the name of the city</string>
     <string name="is_show_type_weather">Show details</string>
     <string name="open_second_activity">Show weather</string>
+    <string name="toast_enter_name_city">Dont entered name city!</string>
 </resources>
