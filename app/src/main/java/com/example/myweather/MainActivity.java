@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity {
 
     private EditText editText;
@@ -18,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private SwitchCompat switchCompat;
 
     private static String NULL_TEXT = "";
-    private static String TEXT_INPUT_NAME_CITY = "Введите название города";
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -32,27 +29,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 WeatherData wd = WeatherData.getInstance();
-                try {
-                    if (editText.getText().toString().equals(NULL_TEXT) || editText.getText().toString().equals(TEXT_INPUT_NAME_CITY)) {
-                        throw new IONullException();
-                    }
-                    else {
-                        initWeatherDate(wd);
-                        Intent intent = new Intent(MainActivity.this, ResultActivity.class);
-                        intent.putExtra("dataWeather", wd);
-                        startActivity(intent);
-                    }
-                }catch (IOException e) {
-                    makeToast("Введите название города!");
-                }
-            }
-        });
-
-        // очистка текстового поля editText
-        editText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText("");
+                if (!editText.getText().toString().equals(NULL_TEXT)) {
+                    initWeatherDate(wd);
+                    Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                    intent.putExtra("dataWeather", wd);
+                    startActivity(intent);
+                } else {makeToast("Dont entered name city!");}
             }
         });
     }
